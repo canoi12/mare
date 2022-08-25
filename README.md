@@ -1,6 +1,6 @@
 # mare (Mini Agnostic REnder)
 
-A simple software based render (all render operations done in a array).
+A simple software based render.
 
 ```c
 #include "mare.h"
@@ -62,4 +62,5 @@ int main(void) {
 	return 0;
 }
 ```
-[Screen recording 2022-08-25 17.08.05.webm](https://user-images.githubusercontent.com/15099243/186758879-5be4d2c1-3e63-4e80-ac84-cfda89b84d5f.webm)
+
+[Screen recording 2022-08-25 17.13.15.webm](https://user-images.githubusercontent.com/15099243/186760769-9eb9eb1f-df4c-4c54-8739-2b669fbd1a91.webm)
