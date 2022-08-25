@@ -1,0 +1,7 @@
+*.o
+*.do
+*.a
+*.so
+*.dll
+*.dylib
+mare
