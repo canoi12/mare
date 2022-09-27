@@ -19,7 +19,7 @@ int main(void) {
 	while (event.type != SDL_QUIT) {
 		SDL_PollEvent(&event);
 		mare_begin(m);
-		mare_clear(m, 0xff000000);
+        mare_clear(m, (vec4_t){0.f, 0.f, 0.f, 1.f});
 		mare_line(m, 0, 0, 32, 32);
 		mare_rect(m, 32, 32, 16, 16);
 		mare_rectfill(m, 32, 48, 16, 16);
@@ -27,12 +27,12 @@ int main(void) {
 		x = sinf(time) * 16;
 
 		vertex_t v[6] = {
-			{ x+64, 16, 0xff0000ff, 0, 0 },
-			{ x+48, 32, 0xff00ff00, 0, 0 },
-			{ x+80, 32, 0xffff0000, 0, 0 },
-			{ x+64, 48, 0xff0000ff, 0, 0 },
-			{ x+48, 32, 0xff00ff00, 0, 0 },
-			{ x+80, 32, 0xffff0000, 0, 0 }
+			{ {x+64, 16}, {1.f, 0.f, 0.f, 1.f}, {0, 0} },
+			{ {x+48, 32}, {0.f, 1.f, 0.f, 1.f}, {0, 0} },
+			{ {x+80, 32}, {0.f, 0.f, 1.f, 1.f}, {0, 0} },
+			{ {x+64, 48}, {1.f, 0.f, 0.f, 1.f}, {0, 0} },
+			{ {x+48, 32}, {0.f, 1.f, 0.f, 1.f}, {0, 0} },
+			{ {x+80, 32}, {0.f, 0.f, 1.f, 1.f}, {0, 0} },
 		};
 		mare_polygon(m, MARE_TRIANGLES, 2, v);
 

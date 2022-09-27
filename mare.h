@@ -8,6 +8,9 @@
 #define SCREEN_HEIGHT 95
 #define SCREEN_SIZE SCREEN_WIDTH * SCREEN_HEIGHT
 
+typedef float vec2_t[2];
+typedef float vec3_t[3];
+typedef float vec4_t[4];
 
 typedef struct mare_t mare_t;
 typedef unsigned int color_t;
@@ -30,9 +33,14 @@ enum {
 };
 
 struct vertex_t {
+    vec2_t position;
+    vec4_t color;
+    vec2_t texcoord;
+#if 0
 	float x, y;
 	color_t color;
 	float u, v;
+#endif
 };
 
 MARE_API mare_t *mare_create(int flags);
@@ -40,8 +48,8 @@ MARE_API void mare_destroy(mare_t *mare);
 
 MARE_API void* mare_get_pixels(mare_t *mare);
 
-MARE_API void mare_clear(mare_t *m, color_t color);
-MARE_API void mare_color(mare_t* m, color_t color);
+MARE_API void mare_clear(mare_t *m, vec4_t color);
+MARE_API void mare_color(mare_t* m, vec4_t color);
 
 MARE_API void mare_begin(mare_t* m);
 MARE_API const void* mare_end(mare_t* m);
